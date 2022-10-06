@@ -1,7 +1,6 @@
-import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 import { Button } from "../styles/Button";
-
+import hero from "../images/hero.jpg"
 const HeroSection = ({ myData }) => {
   const { name } = myData;
 
@@ -11,22 +10,20 @@ const HeroSection = ({ myData }) => {
         <div className="grid grid-two-column">
           <div className="hero-section-data">
             <p className="intro-data">Welcome to </p>
-            <h1> {name} </h1>
+            <h2> {name} </h2>
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias
               atque temporibus veniam doloribus libero ad error omnis voluptates
               animi! Suscipit sapiente.
             </p>
-            <NavLink>
               <Button>show now</Button>
-            </NavLink>
           </div>
           {/* our homepage image  */}
           <div className="hero-section-image">
             <figure>
               <img
-                src="public\images\hero.jpg"
-                alt="hero-section-photo"
+                src={hero}
+                alt="hero-section"
                 className="img-style"
               />
             </figure>

@@ -1,13 +1,13 @@
-import React from "react";
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 import Nav from "./Nav";
+import HeaderIcon from "../images/HeaderIcon.png"
 
 const Header = () => {
   return (
     <MainHeader>
       <NavLink to="/">
-        <img src="./images/logo.png" alt="my logo img" />
+        <img src={HeaderIcon} alt="logo" />
       </NavLink>
       <Nav />
     </MainHeader>
