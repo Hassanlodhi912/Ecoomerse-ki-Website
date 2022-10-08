@@ -3,6 +3,7 @@ import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 import { FiShoppingCart } from "react-icons/fi";
 import { CgMenu, CgClose } from "react-icons/cg";
+import Toggle from "./Toggle";
 
 const Nav = () => {
   const [menuIcon, setMenuIcon] = useState();
@@ -196,6 +197,9 @@ const Nav = () => {
               onClick={() => setMenuIcon(false)}>
               Contact
             </NavLink>
+          </li>
+          <li>
+           <Toggle/>
           </li>
           <li>
             <NavLink to="/cart" className="navbar-link cart-trolley--link">

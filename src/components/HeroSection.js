@@ -13,8 +13,7 @@ const HeroSection = ({ myData }) => {
             <h2> {name} </h2>
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias
-              atque temporibus veniam doloribus libero ad error omnis voluptates
-              animi! Suscipit sapiente.
+              atque temporibus veniam d
             </p>
               <Button>show now</Button>
           </div>
