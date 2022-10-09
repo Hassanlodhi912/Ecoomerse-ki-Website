@@ -21,6 +21,7 @@ export const ToggleReducer = (state = initialState, action) => {
             })
             return {
                 ...state,
+                Products:action.payload,
                 featureProducts: featureData,
             };
         default:
