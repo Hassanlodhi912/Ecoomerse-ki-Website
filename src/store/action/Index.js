@@ -4,3 +4,10 @@ export const setToggle = ()=>{
         type:ActionTypes.SET_TOGGLE
     }
 }
+export const setProducts = (products)=>{
+    return {
+        type:ActionTypes.SET_PRODUCTS,
+        payload : products
+        
+    }
+}

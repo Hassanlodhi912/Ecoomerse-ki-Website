@@ -8,7 +8,6 @@ const Toggle = () => {
     const handleClick = () => {
         dispatch(setToggle())
     }
-
     return (
         <div onClick={handleClick} >
 

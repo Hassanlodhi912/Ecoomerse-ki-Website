@@ -4,10 +4,14 @@ import Router from './config/Router'
 const App = () => {
   const darkMode =useSelector((state)=>state.ToggleReducer.darkMode)
   return (
-    <div style={{
+    <div style=
+    {
+      {
       background : darkMode? "#2C2C29" : "",
-      color :darkMode? "white" :" "
-    }}>
+      color      : darkMode? "white"   : ""
+      }
+    }
+    >
       <Router/>
     </div>
   )
