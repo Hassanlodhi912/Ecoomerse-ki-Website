@@ -1,4 +1,3 @@
-import { useState } from "react"
 import { MdDarkMode, MdLightMode } from "react-icons/md"
 import { useDispatch, useSelector } from "react-redux"
 import { setToggle } from "../store/action/Index"
@@ -9,7 +8,7 @@ const Toggle = () => {
         dispatch(setToggle())
     }
     return (
-        <div onClick={handleClick} >
+        <div  >
 
             <h2  >
                 {
