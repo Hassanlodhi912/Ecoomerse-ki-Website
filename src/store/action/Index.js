@@ -11,3 +11,10 @@ export const setProducts = (products)=>{
         
     }
 }
+export const setSingleProduct = (data)=>{
+    return {
+        type:ActionTypes.SET_SINGLE_PRODUCT,
+        payload : data
+        
+    }
+}

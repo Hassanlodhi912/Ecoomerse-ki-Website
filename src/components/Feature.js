@@ -1,19 +1,22 @@
-import axios from "axios"
-import { setProducts } from "../store/action/Index"
-import { useEffect } from "react"
-import { useDispatch, useSelector } from "react-redux"
+import {  useSelector } from "react-redux"
 import Product from "./Product";
 import styled from "styled-components";
+import { useDispatch } from "react-redux"
+import { useEffect } from "react"
+import { setProducts } from "../store/action/Index"
+import axios from "axios"
+
 const Feature = () => {
-    const dispatch = useDispatch()
+       const featureProducts = useSelector((state) => state.ToggleReducer.featureProducts);
+       const dispatch = useDispatch()
     const fetchProduct = async () => {
+        
         const response = await axios.get("https://api.pujakaitem.com/api/products")
             .catch((err) => { console.log("Error", err) })
 
         dispatch(setProducts(response.data))
     }
     useEffect(() => { fetchProduct() }, [])
-    const featureProducts = useSelector((state) => state.ToggleReducer.featureProducts);
 
 
     return (

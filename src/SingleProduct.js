@@ -1,7 +1,33 @@
 import styled from "styled-components";
-
+import axios from "axios";
+import { useParams } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux"
+import { setSingleProduct } from "./store/action/Index";
+import { useEffect } from "react";
 const SingleProduct = () => {
-  return <h1>single page </h1>;
+  const { id } = useParams();
+  const dispatch = useDispatch()
+  const fetchSingleProduct = async () => {
+
+  const response = await axios.get(`https://api.pujakaitem.com/api/products/${id}`)
+      .catch((err) => { console.log("Error", err) })
+
+    dispatch(setSingleProduct(response.data))
+  }
+  useEffect(() => {fetchSingleProduct() }, [])
+const singleProduct =useSelector((state)=>state.ToggleReducer.singleProduct)
+const {
+  id: alias,
+  name,
+  company,
+  price,
+  description,
+  category,
+  stock,
+  stars,
+  reviews,
+} = singleProduct;
+  return <h1>sing page {name}</h1>
 };
 
 const Wrapper = styled.section`
