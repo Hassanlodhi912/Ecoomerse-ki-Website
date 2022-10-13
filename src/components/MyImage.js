@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-
 const MyImage = ({imgs=[{url:""}]}) => {
-  const [mainImage, setMainImage] = useState(imgs[0])
+  const [mainImage, setMainImage] = useState(imgs[0]);
   return (
     <Wrapper>
       <div className='grid grid-four-column'>
@@ -10,7 +9,9 @@ const MyImage = ({imgs=[{url:""}]}) => {
           return(
             <figure>
               <img src={currElem.url} alt={currElem.filename} 
-              className="box-image--style" key={index} onClick={()=>setMainImage(currElem)}/>
+              className="box-image--style" 
+              key={index} 
+              onClick={() => setMainImage(currElem)}/>
             </figure>
           )
         })}
