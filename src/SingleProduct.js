@@ -23,12 +23,10 @@ const SingleProduct = () => {
   useEffect(() => {fetchSingleProduct() }, [])
 const singleProduct =useSelector((state)=>state.ToggleReducer.singleProduct)
 const {
-  id: alias,
   name,
   company,
   price,
   description,
-  category,
   stock,
   stars,
   reviews,
