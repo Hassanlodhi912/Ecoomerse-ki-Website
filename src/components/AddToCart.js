@@ -2,32 +2,36 @@ import React, { useState } from 'react'
 import styled from 'styled-components'
 import { useSelector } from 'react-redux'
 import { FaCheck } from "react-icons/fa";
-
-
-import {Button} from "../styles/Button"
+import { Button } from "../styles/Button"
+import { NavLink } from 'react-router-dom';
+import CartAmount from './CartAmount';
 const AddToCart = () => {
-  const singleProduct = useSelector((state)=>state.ToggleReducer.singleProduct)
-  const {id ,colors,stock} = singleProduct
-  const [colr,setColr]=useState(colors[0])
-  
-  return <Wrapper>
-    <div className='colors'>
-        <p>
-            Colors:
-            {colors.map((currElem,index)=>{
-                return <Button key={index}
-                 style={{backgroundColor:currElem}}
-                 className={colr=== currElem ? "btnStyle active": "btnStyle"}
-                  onClick={()=>setColr(currElem)}>
-                    {colr === currElem ? <FaCheck className="checkStyle"/> : null }
+    const singleProduct = useSelector((state) => state.ToggleReducer.singleProduct)
+    const { id, colors, stock  } = singleProduct
+    const [colr, setColr] = useState(colors[0])
+    return <Wrapper>
+        <div className='colors'>
+            <p>
+                Colors:
+                {colors.map((currElem, index) => {
+                    return <Button key={index}
+                        style={{ backgroundColor: currElem }}
+                        className={colr === currElem ? "btnStyle active" : "btnStyle"}
+                        onClick={() => setColr(currElem)}>
+                        {colr === currElem ? <FaCheck className="checkStyle" /> : null}
+                    </Button>
+
+                })}
+            </p>
+        </div>
+        <CartAmount />
+            <NavLink to="/cart">
+                <Button className='btn' >
+                    Add To Cart
                 </Button>
+            </NavLink>
 
-            })}
-        </p>
-
-    </div>
-
-  </Wrapper>
+    </Wrapper>
 }
 const Wrapper = styled.section`
   .colors p {
