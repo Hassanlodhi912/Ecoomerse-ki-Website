@@ -10,7 +10,7 @@ const Toggle = () => {
     return (
         <div  >
 
-            <h2  >
+            <h2  onClick={handleClick} >
                 {
                     darkMode  ? ( <MdLightMode  /> ) : (       <MdDarkMode />   )
                 }

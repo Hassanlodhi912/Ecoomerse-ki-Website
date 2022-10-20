@@ -11,6 +11,7 @@ import FormatPrice from "./Helpers/FormatPrice";
 import { MdSecurity } from "react-icons/md";
 import { TbTruckDelivery, TbReplace } from "react-icons/tb";
 import Star from "./components/Star";
+import AddToCart from "./components/AddToCart";
 const SingleProduct = () => {
   const { id } = useParams();
   const dispatch = useDispatch()
@@ -23,7 +24,6 @@ const SingleProduct = () => {
   }
   useEffect(() => {fetchSingleProduct() }, [])
 const singleProduct =useSelector((state)=>state.ToggleReducer.singleProduct)
-console.log(singleProduct)
 const {
   name,
   company,
@@ -92,6 +92,8 @@ const {
                 Brand :<span> {company} </span>
               </p>
             </div>
+          <hr/>
+          {stock > 0 && <AddToCart />}
           </div>
         </div>
       </Container>
