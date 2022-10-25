@@ -1,8 +1,12 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import styled from "styled-components";
-
+import GridProduct from "./components/GridProduct";
 const Products = () => {
-  return <Wrapper></Wrapper>;
+   const Products =useSelector((state)=>state.ToggleReducer.Products)
+  return <Wrapper>
+ <GridProduct Products ={Products}/>
+  </Wrapper>;
 };
 
 const Wrapper = styled.section`
